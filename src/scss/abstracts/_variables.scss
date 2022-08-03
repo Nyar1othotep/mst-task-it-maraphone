@@ -1,0 +1,11 @@
+:root {
+    --width: 0px;
+}
+
+$white: #FFFFFF;
+$base: #262525;
+$accent: #D88F5E;
+$width: 10%;
+@mixin lh($lh, $fz) {
+    line-height: calc(#{$lh} / #{$fz} * 100%);
+}

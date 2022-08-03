@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <symbol id="activity" viewBox="0 0 16 16">
+  		<path fill-rule="evenodd" d="M6 2a.5.5 0 0 1 .47.33L10 12.036l1.53-4.208A.5.5 0 0 1 12 7.5h3.5a.5.5 0 0 1 0 1h-3.15l-1.88 5.17a.5.5 0 0 1-.94 0L6 3.964 4.47 8.171A.5.5 0 0 1 4 8.5H.5a.5.5 0 0 1 0-1h3.15l1.88-5.17A.5.5 0 0 1 6 2Z"/>
+	</symbol>
+
+	<symbol id="check-circle" viewBox="0 0 16 16">
+  		<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+  </symbol>
+
+  <symbol id="file-earmark" viewBox="0 0 16 16">
+  		<path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+	  <path d="M4.5 12.5A.5.5 0 0 1 5 12h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 10h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm1.639-3.708 1.33.886 1.854-1.855a.25.25 0 0 1 .289-.047l1.888.974V8.5a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V8s1.54-1.274 1.639-1.208zM6.25 6a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5z"/>
+  </symbol>
+
+  <symbol id="icon-home" viewBox="0 0 188 188">
+	<g filter="url(#filter0_d_0_1570)">
+	<rect x="50" y="50" width="88" height="88" rx="10" fill="white"/>
+	</g>
+	<path d="M90 110V98H98V110H108V94H114L94 76L74 94H80V110H90Z" fill="#5A98D0"/>
+	<defs>
+	<filter id="filter0_d_0_1570" x="0" y="0" width="188" height="188" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+	<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+	<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+	<feOffset/>
+	<feGaussianBlur stdDeviation="25"/>
+	<feColorMatrix type="matrix" values="0 0 0 0 0.0627451 0 0 0 0 0.439216 0 0 0 0 0.694118 0 0 0 0.25 0"/>
+	<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1570"/>
+	<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1570" result="shape"/>
+	</filter>
+	</defs>
+  </symbol>
+
+  <symbol id="icon-lock" viewBox="0 0 72 71">
+	<g filter="url(#filter0_d_0_1584)">
+	<path d="M44.2844 10H16.8538C13.0685 10 10 13.0475 10 16.8068V44.0493C10 47.8086 13.0685 50.8561 16.8538 50.8561H44.2844C48.0696 50.8561 51.1381 47.8086 51.1381 44.0493V16.8068C51.1381 13.0475 48.0696 10 44.2844 10Z" fill="#F58A8A"/>
+	</g>
+	<path d="M37 26H36V24C36 21.24 33.76 19 31 19C28.24 19 26 21.24 26 24V26H25C23.9 26 23 26.9 23 28V38C23 39.1 23.9 40 25 40H37C38.1 40 39 39.1 39 38V28C39 26.9 38.1 26 37 26ZM31 35C29.9 35 29 34.1 29 33C29 31.9 29.9 31 31 31C32.1 31 33 31.9 33 33C33 34.1 32.1 35 31 35ZM34.1 26H27.9V24C27.9 22.29 29.29 20.9 31 20.9C32.71 20.9 34.1 22.29 34.1 24V26Z" fill="white"/>
+	<defs>
+	<filter id="filter0_d_0_1584" x="0" y="0" width="71.1377" height="70.8561" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+	<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+	<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+	<feOffset dx="5" dy="5"/>
+	<feGaussianBlur stdDeviation="7.5"/>
+	<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
+	<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_1584"/>
+	<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_1584" result="shape"/>
+	</filter>
+	</defs>
+  </symbol>
+</svg>

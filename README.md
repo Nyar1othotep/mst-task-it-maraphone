@@ -1,1 +1,1 @@
-# mst-task-it-maraphone
+# webpack-pattern
