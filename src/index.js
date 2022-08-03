@@ -22,6 +22,8 @@ const lastHeaderListElement = document.querySelector('.menu-header__list>:last-c
 const headerList = document.querySelector('.menu-header__list');
 const headerLink = document.querySelectorAll('.menu-header__link');
 
+let headerActiveFirstLinkPos, headerFocusLinkPos, headerActiveLastLinkPos, diffLinks, headerLinkWidth, headerLinkAnotherWidth, currentPosActiveElement, mousePosFromActiveElement, a, b;
+
 const calcCurrentProp = (headerListElement, LastHeaderListElementWidth, headerActiveLinkPos, plus, prop, nullProp) => {
     diffLinks = headerListElement.getBoundingClientRect().x + LastHeaderListElementWidth;
     currentPosActiveElement = (headerActiveLinkPos - diffLinks) * plus;
@@ -29,43 +31,52 @@ const calcCurrentProp = (headerListElement, LastHeaderListElementWidth, headerAc
     headerList.style.setProperty(`${nullProp}`, '');
 }
 
-let headerActiveFirstLinkPos, headerFocusLinkPos, headerActiveLastLinkPos, diffLinks, headerLinkWidth, headerLinkAnotherWidth, currentPosActiveElement, mousePosFromActiveElementE;
+const calcHeaderLinkPos = () => {
+    headerLink.forEach(element => {
+        if (element.classList.contains('active')) {
+            headerActiveFirstLinkPos = element.getBoundingClientRect().x;
+            headerActiveLastLinkPos = element.getBoundingClientRect().x + element.offsetWidth;
+            headerLinkAnotherWidth = ((element.getBoundingClientRect().x + element.offsetWidth) - element.getBoundingClientRect().x);
+
+            a = headerActiveFirstLinkPos;
+        };
+    });
+}
 
 headerLink.forEach(element => {
     if (element.classList.contains('active')) {
         headerActiveFirstLinkPos = element.getBoundingClientRect().x;
+        a = headerActiveFirstLinkPos;
+        b = lastHeaderListElement.getBoundingClientRect().x + element.offsetWidth;
     };
 });
 
+
 document.body.addEventListener('mousemove', () => {
-    if (document.documentElement.clientWidth > 768) {
-        headerLink.forEach(element => {
-            if (element.classList.contains('active')) {
-                headerActiveFirstLinkPos = element.getBoundingClientRect().x;
-                headerActiveLastLinkPos = element.getBoundingClientRect().x + element.offsetWidth;
-                headerLinkAnotherWidth = ((element.getBoundingClientRect().x + element.offsetWidth) - element.getBoundingClientRect().x) + 6;
-            };
-        });
+    if (document.documentElement.clientWidth > 768 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+
+        calcHeaderLinkPos();
 
         if (event.target.closest('.menu-header__link')) {
             headerFocusLinkPos = event.target.getBoundingClientRect().x;
             headerLinkWidth = event.target.offsetWidth;
         };
 
-        mousePosFromActiveElementE = (headerFocusLinkPos + headerLinkWidth) - headerActiveFirstLinkPos + 6;
+        mousePosFromActiveElement = (headerFocusLinkPos + headerLinkWidth) - headerActiveFirstLinkPos;
 
         if (event.target.closest('.menu-header__link')) {
-            if (mousePosFromActiveElementE > headerLinkAnotherWidth) {
+            if (mousePosFromActiveElement > headerLinkAnotherWidth) {
 
                 calcCurrentProp(firstHeaderListElement, 0, headerActiveFirstLinkPos, 1, '--left', '--rigth');
 
-                headerList.style.setProperty('--width', `${mousePosFromActiveElementE}px`);
-            } else if (mousePosFromActiveElementE < headerLinkAnotherWidth) {
+                headerList.style.setProperty('--width', `${mousePosFromActiveElement}px`);
+            } else if (mousePosFromActiveElement < headerLinkAnotherWidth) {
 
                 calcCurrentProp(lastHeaderListElement, lastHeaderListElement.offsetWidth, headerActiveLastLinkPos, -1, '--rigth', '--left');
 
-                mousePosFromActiveElementE = headerActiveLastLinkPos - headerFocusLinkPos;
-                headerList.style.setProperty('--width', `${mousePosFromActiveElementE}px`);
+                mousePosFromActiveElement = headerActiveLastLinkPos - headerFocusLinkPos;
+
+                headerList.style.setProperty('--width', `${mousePosFromActiveElement}px`);
             };
         };
 
@@ -83,6 +94,22 @@ document.body.addEventListener('click', () => {
             element.classList.remove('active');
         })
         event.target.classList.add('active');
+
+        if (document.documentElement.clientWidth > 768 && !/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            mousePosFromActiveElement = (headerFocusLinkPos + headerLinkWidth) - a;
+
+            calcHeaderLinkPos();
+
+            if (mousePosFromActiveElement > headerLinkAnotherWidth) {
+
+                calcCurrentProp(lastHeaderListElement, lastHeaderListElement.offsetWidth, headerActiveLastLinkPos, -1, '--rigth', '--left');
+
+            } else if (mousePosFromActiveElement < headerLinkAnotherWidth) {
+
+                calcCurrentProp(firstHeaderListElement, 0, headerActiveFirstLinkPos, 1, '--left', '--rigth');
+
+            };
+        };
     };
 });
 

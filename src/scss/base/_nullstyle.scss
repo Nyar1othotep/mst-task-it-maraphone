@@ -39,13 +39,8 @@ button {
 /* ----------------WRAPPER------------------------------------------------- */
 
 .wrapper {
-    min-height: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    min-height: 100vh;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
     flex-direction: column;
 }
 
@@ -72,6 +67,5 @@ main {
     height: 100%;
     top: 0;
     left: 0;
-    -o-object-fit: cover;
     object-fit: cover;
 }

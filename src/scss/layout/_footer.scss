@@ -1,0 +1,18 @@
+.footer {
+    height: 100%;
+    background: $white;
+    &__body {
+        padding: 0 60px;
+    }
+    &__copy {
+        padding: 23px 0px 22px 0px;
+        font-family: 'Gilroy Light';
+        font-size: 13px;
+        @include lh(15, 13);
+        letter-spacing: 0.175729px;
+        text-transform: uppercase;
+        & span {
+            margin: 0 24px;
+        }
+    }
+}
