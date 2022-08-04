@@ -1,0 +1,59 @@
+.content {
+    flex: 0 1 50%;
+    &__body {
+        padding: 0px 0px 0px 172px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        background: $backgroundAlternative;
+        height: 100%;
+    }
+    &__list {
+        max-width: 435px;
+        margin: 0px 0px 151px 0px;
+    }
+    &__item {
+        animation: contentMove 0.3s forwards alternate;
+    }
+    &__steps {
+        font-family: 'Gilroy Light';
+        font-size: 17px;
+        @include lh(20, 17);
+        color: $textDisable;
+    }
+}
+
+.item-content {
+    &__title {
+        margin: 0px 0px 41px 0px;
+        font-family: 'Gilroy ExtraBold';
+        font-size: 44px;
+        @include lh(53, 44);
+        letter-spacing: -0.0255199px;
+        text-transform: uppercase;
+        color: $base;
+    }
+    &__text {
+        display: -webkit-box;
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 18px;
+        @include lh(30, 18);
+        letter-spacing: -0.0220791px;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
+@keyframes contentMove {
+    0% {
+        opacity: 0;
+        transform: translateY(var(--transform));
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

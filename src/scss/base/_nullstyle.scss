@@ -69,3 +69,13 @@ main {
     left: 0;
     object-fit: cover;
 }
+
+.main {
+    padding: 60px;
+    display: flex;
+}
+
+.contents {
+    display: flex;
+    flex: 0 1 81%;
+}

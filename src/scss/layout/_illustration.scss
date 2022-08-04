@@ -1,0 +1,22 @@
+.illustration {
+    flex: 0 1 50%;
+    overflow: hidden;
+    &__img {
+        height: 100%;
+        animation: imgMove 0.3s forwards alternate;
+    }
+    &__img img {
+        object-fit: cover;
+        max-width: 100%;
+        height: inherit;
+    }
+}
+
+@keyframes imgMove {
+    0% {
+        transform: translateY(var(--transformImg));
+    }
+    100% {
+        transform: translateY(0);
+    }
+}

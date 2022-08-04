@@ -1,11 +1,16 @@
 :root {
     --width: 0px;
+    --transform: 0px;
+    --transformImg: 0px;
 }
 
 $white: #FFFFFF;
 $base: #262525;
 $accent: #D88F5E;
+$backgroundAccent: #EBD8CC;
 $width: 10%;
+$textDisable: #505050;
+$backgroundAlternative: #F0F0F0;
 @mixin lh($lh, $fz) {
     line-height: calc(#{$lh} / #{$fz} * 100%);
 }

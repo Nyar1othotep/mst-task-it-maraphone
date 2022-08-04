@@ -1,18 +1,13 @@
+import 'regenerator-runtime/runtime';
 import './scss/style.scss';
 import SvgSprite from './js/SvgSprite/SvgSprite';
 import ConnectionImages from './js/ConnectionImages/ConnectionImages';
-// import Gallery from './js/components/Gallery/Gallery';
+import App from './js/components/App/App';
 
-// const DATA = [{
-//     img: 'logo.png',
-//     icon: 'icon-home'
-// }, {
-//     img: './assets/images/logo.png',
-//     icon: ['icon-lock', 'icon-home']
-// }, {
-//     img: ['logo.png', './assets/images/logo-footer.png'],
-//     icon: ['icon-lock', 'icon-home']
-// }];
+(async() => {
+    await App.render();
+    App.eventListener();
+})();
 
 SvgSprite.render();
 ConnectionImages.render();
@@ -145,7 +140,3 @@ menu.addEventListener('click', function() {
         bodyEl.classList.remove('lock');
     }
 })
-
-// Gallery.render(DATA);
-
-// В долгий ящки

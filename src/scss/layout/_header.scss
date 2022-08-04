@@ -2,11 +2,12 @@
     &__container {
         max-width: 1716px;
     }
-    position: relative;
+    position: fixed;
     width: 100%;
     background: $white;
     text-transform: uppercase;
     font-family: 'Gilroy ExtraBold';
+    z-index: 50;
     &>* a {
         color: $base;
     }
@@ -25,6 +26,7 @@
         height: 70px;
         background: $base;
         z-index: 3;
+        cursor: pointer;
     }
     &__box {
         left: 24px;
@@ -33,7 +35,6 @@
         display: block;
         position: relative;
         right: 24px;
-        cursor: pointer;
         z-index: 5;
     }
     &__burger span {
