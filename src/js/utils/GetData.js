@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Error from '../components/Error/Error';
 
 class GetData {
     async dataGet(url) {
@@ -6,7 +7,7 @@ class GetData {
             const res = await axios.get(url);
             return res.data;
         } catch (error) {
-            console.log(error);
+            Error.render(error.message);
         };
     };
 };

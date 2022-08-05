@@ -35,16 +35,23 @@
         color: $base;
     }
     &__text {
-        display: -webkit-box;
         font-family: 'Roboto';
         font-weight: 400;
         font-size: 18px;
         @include lh(30, 18);
         letter-spacing: -0.0220791px;
-        -webkit-line-clamp: 3;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
     }
+}
+
+.ellipsis {
+    margin: 0px 0px 0px 5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: $base;
+    color: $white;
 }
 
 @keyframes contentMove {

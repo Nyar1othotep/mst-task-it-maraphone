@@ -3,10 +3,15 @@ import './scss/style.scss';
 import SvgSprite from './js/SvgSprite/SvgSprite';
 import ConnectionImages from './js/ConnectionImages/ConnectionImages';
 import App from './js/components/App/App';
+import AboutTheComplex from './js/components/AboutTheComplex/AboutTheComplex';
+import Peculiarities from './js/components/Peculiarities/Peculiarities';
+import Pentahuses from './js/components/Pentahuses/Pentahuses'
+import ChooseAnApartment from './js/components/ChooseAnApartment/ChooseAnApartment';
+
+AboutTheComplex.render();
 
 (async() => {
     await App.render();
-    App.eventListener();
 })();
 
 SvgSprite.render();
@@ -106,6 +111,17 @@ document.body.addEventListener('click', () => {
             };
         };
     };
+
+    if (event.target.closest('#aboutTheComplex')) {
+        AboutTheComplex.render();
+        App.render();
+    } else if (event.target.closest('#peculiarities')) {
+        Peculiarities.render();
+    } else if (event.target.closest('#pentahuses')) {
+        Pentahuses.render();
+    } else if (event.target.closest('#chooseAnApartment')) {
+        ChooseAnApartment.render();
+    }
 });
 
 const burger = document.querySelector('.header__burger');

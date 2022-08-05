@@ -1,12 +1,13 @@
 import { getData } from "../../utils/GetData";
 import RewriteData from "../../RewriteData/RewriteData";
-import { URL, MENU, CONTENT, STEPS, ILLUSTRATION } from "../../utils/root";
+import { URL } from "../../utils/root";
 
 let DATA = [];
-
 class App {
 
     renderMenu(data) {
+        const MENU = document.querySelector('#menuSectionList');
+
         let htmlContent = '';
 
         data.forEach(({ title }) => {
@@ -17,10 +18,14 @@ class App {
 				</li>
 				`;
         });
+
         MENU.innerHTML = htmlContent;
+
+        this.eventListener();
     }
 
     renderContent(uri) {
+        const CONTENT = document.querySelector('#contentList');
 
         CONTENT.innerHTML = '';
 
@@ -28,6 +33,8 @@ class App {
 
         DATA.forEach(({ id, title, text, img }) => {
             if (uri === title) {
+                text = this.truncate(text);
+
                 let evenOrOdd = id % 2 === 0 ? '--transform: 40%' : '--transform: -40%';
                 htmlContent = `
 						<li class="content__item" data-id="${id}" style="${evenOrOdd}">
@@ -44,6 +51,8 @@ class App {
     }
 
     renderSteps(id) {
+        const STEPS = document.querySelector('#contentSteps');
+
         let htmlContent = '';
 
         htmlContent = `${id} / ${DATA.length}`;
@@ -52,6 +61,8 @@ class App {
     }
 
     renderIllustration(id, title, img) {
+        const ILLUSTRATION = document.querySelector('#illustration');
+
         img = RewriteData.rewrite(img);
 
         let htmlContent = '';
@@ -68,6 +79,7 @@ class App {
     }
 
     async render() {
+
         DATA = await getData.dataGet(URL);
 
         DATA ? this.renderMenu(DATA) : console.log(error.message);
@@ -96,6 +108,13 @@ class App {
                 this.renderContent(uri);
             });
         });
+    }
+
+    truncate(str) {
+        if (str.length > 129) {
+            return str.substring(0, 129) + '<span class="ellipsis">...</span>';
+        }
+        return str;
     }
 
 };

@@ -11,6 +11,7 @@ $backgroundAccent: #EBD8CC;
 $width: 10%;
 $textDisable: #505050;
 $backgroundAlternative: #F0F0F0;
+$error: #037365;
 @mixin lh($lh, $fz) {
     line-height: calc(#{$lh} / #{$fz} * 100%);
 }
