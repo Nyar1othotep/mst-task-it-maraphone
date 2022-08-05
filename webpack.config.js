@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
+const autoprefixer = require('autoprefixer');
 
 let mode = "development";
 process.env.NODE_ENV === 'production' ? mode = 'production' : mode = 'development';
@@ -69,6 +70,7 @@ module.exports = {
                                 plugins: [
                                     [
                                         "postcss-preset-env",
+                                        autoprefixer,
                                         {
                                             // Options
                                         },
