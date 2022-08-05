@@ -167,3 +167,32 @@
         font-size: 20px;
     }
 }
+
+@media (orientation: landscape) and (max-width: 992px) {
+    .main {
+        padding: 30px 15px;
+    }
+    .header__body {
+        min-height: 40px;
+    }
+    .header__burger,
+    .header__box {
+        top: 35px;
+    }
+    .menu-section__list {
+        overflow: auto;
+    }
+    .menu-section__list>*:not(:last-child) {
+        margin: 0px 10px 10px 0px;
+    }
+    .content__list {
+        margin: 0px 0px 30px 0px;
+    }
+    .item-content__title {
+        margin: 0px 0px 20px 0px;
+        font-size: 20px;
+    }
+    .footer__copy {
+        padding: 10px 0;
+    }
+}
